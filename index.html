@@ -15,19 +15,20 @@
       font-family: Arial, sans-serif;
     }
 
-    .header {
+    .main {
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 80px;
+      justify-content: center;
+      gap: 50px;
       padding-top: 180px;
-      transform: translateX(-80px);
+      transform: translateX(-40px);
     }
 
     .goal {
       font-size: 36px;
       font-weight: bold;
       text-align: right;
+      white-space: nowrap;
     }
 
     .right-side {
@@ -68,12 +69,19 @@
     .youtube-button:hover {
       transform: scale(1.05);
     }
+
+    .image {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
   </style>
 </head>
 
 <body>
 
-  <div class="header">
+  <div class="main">
 
     <div class="goal">
       help me hit 1,000 subscribers
@@ -96,6 +104,12 @@
       </a>
 
     </div>
+
+    <img
+      class="image"
+      src="8708dc41447127278b4bf08d8fbb6936.jpg"
+      alt="bebra_playhh"
+    >
 
   </div>
 
