@@ -3,35 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bebra Playhh</title>
+
+  <title>bebra_playhh</title>
 
   <style>
     body {
       margin: 0;
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       background: #111;
       color: white;
       font-family: Arial, sans-serif;
-      text-align: center;
     }
 
-    .container {
-      padding: 40px;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 50px;
     }
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 30px;
+    .goal {
+      font-size: 32px;
+      font-weight: bold;
     }
 
     .counter {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 10px;
-      padding: 15px 25px;
+      padding: 15px 22px;
       border-radius: 15px;
       background: #222;
       font-size: 24px;
@@ -48,14 +48,18 @@
 
 <body>
 
-  <div class="container">
-    <h1>Bebra Playhh</h1>
+  <div class="header">
+
+    <div class="goal">
+      help me hit 1,000 subscribers
+    </div>
 
     <div class="counter">
       <span>🍌</span>
       <span id="sub-count">Loading...</span>
       <span class="label">subscribers</span>
     </div>
+
   </div>
 
   <script>
