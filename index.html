@@ -30,6 +30,13 @@
       text-align: right;
     }
 
+    .right-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
     .counter {
       display: flex;
       align-items: center;
@@ -46,6 +53,21 @@
       font-weight: normal;
       opacity: 0.7;
     }
+
+    .youtube-button {
+      padding: 12px 25px;
+      border-radius: 10px;
+      background: #ff0000;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+
+    .youtube-button:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 
@@ -57,10 +79,22 @@
       help me hit 1,000 subscribers
     </div>
 
-    <div class="counter">
-      <span>🍌</span>
-      <span id="sub-count">Loading...</span>
-      <span class="label">subscribers</span>
+    <div class="right-side">
+
+      <div class="counter">
+        <span>🍌</span>
+        <span id="sub-count">Loading...</span>
+        <span class="label">subscribers</span>
+      </div>
+
+      <a
+        class="youtube-button"
+        href="https://www.youtube.com/@bebra_playhh"
+        target="_blank"
+      >
+        ▶ Visit my YouTube
+      </a>
+
     </div>
 
   </div>
