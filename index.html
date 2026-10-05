@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bebra Playhh</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 30px;
+    }
+
+    .counter {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 25px;
+      border-radius: 15px;
+      background: #222;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .label {
+      font-size: 16px;
+      font-weight: normal;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Bebra Playhh</h1>
+
+    <div class="counter">
+      <span>🍌</span>
+      <span id="sub-count">Loading...</span>
+      <span class="label">subscribers</span>
+    </div>
+  </div>
+
+  <script>
+    const WORKER_URL = "https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnQyNL7kfhMA14VwKYkghGoKyge9XxcdSZ3ZCf6J6gMLb_nUiX8vU91N7vBcWsqMY07X9HU3KSHLR29xJOtQbgOHMqrEf2OgVnLilb6NsNKXdjjrvHp9Ld3OMnNwbuo7LFfZEoiQoorqPKcNErOjWg0NJyFy67mOBLHHPXnsDzbysVJ3G0FP6DBKwa6gBesWS0Y89fpET4pIUTuJpGnvHzu9ygNccvPGi8c9Lz1aaoKajKQP0pZRRh05pmHe1TYiFw9imRX_X8zTjkX_DVp7xitgF__x1Q&lib=MNaxVXWUGDRJm86NUt48FJd1S2JIpp1Oo";
+
+    async function updateCounter() {
+      try {
+        const response = await fetch(WORKER_URL);
+        const data = await response.json();
+
+        if (data.subscribers !== undefined) {
+          document.getElementById("sub-count").textContent =
+            Number(data.subscribers).toLocaleString();
+        }
+      } catch (error) {
+        document.getElementById("sub-count").textContent = "Unavailable";
+      }
+    }
+
+    updateCounter();
+    setInterval(updateCounter, 5 * 60 * 1000);
+  </script>
+
+</body>
+</html>
